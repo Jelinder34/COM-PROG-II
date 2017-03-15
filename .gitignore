@@ -1,0 +1,47 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+package javaproject1;
+import java.util.Scanner;
+public class JavaProject1 {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+  
+        // name your variables 
+        double invAmount;
+        double monthlyRate;
+        double annRate;
+        double numYears;
+        double futureAmount;
+        
+        // input the items
+        System.out.print("Enter the Investment Amount: $");
+        invAmount = kb.nextFloat();
+        
+        System.out.print("Enter the annual Rate: ");
+        annRate = kb.nextFloat();
+        
+        System.out.print("Enter the number of years: ");
+        numYears = kb.nextFloat();
+        
+        // Calculation
+        annRate = annRate / 100;
+        monthlyRate = (annRate / 12);
+        futureAmount = invAmount * Math.pow((1 + monthlyRate), (numYears * 12));
+        System.out.printf("Future Investment amount is $%.2f\n", futureAmount);
+        
+    }//main
+    
+}//class
